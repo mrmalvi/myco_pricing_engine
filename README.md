@@ -1,119 +1,100 @@
-# MycoPricingEngine
+# 🚀 Myco Pricing Engine – Rails Engine for Pricing Utilities
 
-MycoPricingEngine is a Ruby gem for handling **pricing calculations, loan/EMI computations, and financial preference management** in Rails applications. It provides a flexible engine for modeling pricing rules, calculating interest, and managing dynamic preferences per entity.
+[![Gem Version](https://badge.fury.io/rb/myco_pricing_engine.svg)](https://rubygems.org/gems/myco_pricing_engine)
+[![Build Status](https://github.com/your-username/myco_pricing_engine/actions/workflows/ci.yml/badge.svg)](https://github.com/your-username/myco_pricing_engine/actions)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-## Installation
+**Myco Pricing Engine** is an open-source **Rails engine** that provides utilities for pricing calculations and automation.
+It helps developers integrate pricing logic, split EMIs, and manage financial calculations in Rails applications.
 
-You can install the gem by adding it to your application's Gemfile:
+👉 [RubyGems page](https://rubygems.org/gems/myco_pricing_engine) |
+👉 [Source code on GitHub](https://github.com/your-username/myco_pricing_engine)
+
+---
+
+## ✨ Features
+- ⚡ Automatic pricing calculations
+- 🔢 EMI and interest rate utilities
+- 🧩 Easily integratable with Rails apps
+- ✅ Works with **Rails 6, Rails 7**, and above, supports **Ruby 2.7+**
+
+---
+
+## 📦 Installation
+
+Add this line to your Rails app `Gemfile`:
 
 ```ruby
 gem 'myco_pricing_engine'
 ```
 
-Then execute:
+Then install the gem:
 
 ```bash
 bundle install
 ```
 
-Or install it manually:
+Or install manually:
 
 ```bash
 gem install myco_pricing_engine
 ```
 
-## Usage
+## 🚀 Usage
 
-### 1. Including Pricing Engine in Rails Models
+### Automatic Features
+- Pricing calculations for products, EMI breakdown, and financial summaries.
 
+### Manual Usage
 ```ruby
-class Loan < ApplicationRecord
-  include MycoPricingEngine::Calculator
-
-  # Example: calculate EMI
-  def monthly_emi
-    MycoPricingEngine::Calculator.compute_emi(principal, rate_of_interest, tenure)
-  end
-end
+MycoPricingEngine.calculate_price(amount: 10000, rate: 0.12, tenure: 12)
 ```
 
-### 2. Managing Preferences
+---
 
-The gem supports dynamic preferences using `SerialPreference`:
+## 🧪 Development & Testing
 
-```ruby
-class DummyClass < ApplicationRecord
-  include SerialPreference::HasSerialPreferences
-
-  preferences do
-    boolean :taxable, default: true
-    string  :vat_no
-    integer :max_invoice_items, default: 100
-  end
-end
-
-d = DummyClass.new
-d.taxable?           # => true
-d.vat_no = "ABC123"
-d.max_invoice_items   # => 100
-```
-
-### 3. Supported Rails Versions
-
-MycoPricingEngine supports:
-
-- Rails 4.x → 7.x
-- ActiveRecord 4.x → 8.x
-- Ruby 2.7+ → 3.4
-
-### 4. Development
-
-Clone the repository and set up dependencies:
+Clone and setup:
 
 ```bash
-git clone https://github.com/mrmalvi/myco_pricing_engine.git
+git clone https://github.com/your-username/myco_pricing_engine.git
 cd myco_pricing_engine
-bin/setup
+bundle install
 ```
 
-Run the console to experiment:
-
-```bash
-bin/console
-```
-
-Run tests:
+Run specs:
 
 ```bash
 bundle exec rspec
 ```
 
-To install the gem locally:
+Build gem locally:
 
 ```bash
 bundle exec rake install
 ```
 
-To release a new version:
+Release a version:
 
 ```bash
-# Update the version in lib/myco_pricing_engine/version.rb
 bundle exec rake release
 ```
 
-This will create a git tag, push commits, and push the gem to RubyGems.org.
+---
 
-## Contributing
+## 🤝 Contributing
 
-Bug reports and pull requests are welcome! Please open issues or PRs on [GitHub](https://github.com/mrmalvi/myco_pricing_engine).
+Contributions, bug reports, and pull requests are welcome!
+See [issues](https://github.com/your-username/myco_pricing_engine/issues).
 
-Before contributing, ensure all tests pass:
+---
 
-```bash
-bundle exec rspec
-```
+## 📜 License
 
-## License
+Released under the [MIT License](LICENSE.txt).
 
-This gem is released under the MIT License. See [LICENSE](LICENSE) for details.
+---
+
+### 📈 SEO Keywords
+*Rails engine, Ruby gem, pricing utilities, EMI calculation, Rails financial gem, Myco Pricing Engine*
 
