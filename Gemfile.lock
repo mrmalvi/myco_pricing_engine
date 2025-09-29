@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    myco_pricing_engine (0.1.0)
+    myco_pricing_engine (0.1.1)
       activesupport (>= 6.0)
 
 GEM
