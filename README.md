@@ -69,7 +69,7 @@ calc = MycoPricingEngine::Calculator.new(
 
 # Calculate final price
 puts calc.final_price
-# => 1062.0
+# => 1012.0
 
 ```
 
