@@ -7,10 +7,6 @@ MycoPricingEngine is a Ruby gem for handling **pricing calculations, loan/EMI co
 You can install the gem by adding it to your application's Gemfile:
 
 ```ruby
-# From RubyGems
-gem 'myco_pricing_engine'
-
-# Or directly from GitHub
 gem 'myco_pricing_engine'
 ```
 
