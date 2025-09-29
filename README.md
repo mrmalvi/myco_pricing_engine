@@ -11,7 +11,7 @@ You can install the gem by adding it to your application's Gemfile:
 gem 'myco_pricing_engine'
 
 # Or directly from GitHub
-gem 'myco_pricing_engine', git: 'https://github.com/mrmalvi/myco_pricing_engine.git'
+gem 'myco_pricing_engine'
 ```
 
 Then execute:
