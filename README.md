@@ -16,7 +16,6 @@ It helps developers integrate pricing logic, split EMIs, and manage financial ca
 - ⚡ Automatic pricing calculations
 - 🔢 EMI and interest rate utilities
 - 🧩 Easily integratable with Rails apps
-- ✅ Works with **Rails 6, Rails 7**, and above, supports **Ruby 2.7+**
 
 ---
 
