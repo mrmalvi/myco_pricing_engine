@@ -12,12 +12,12 @@
 ---
 
 ## ✨ Features
-⚡ Automatic pricing calculations for products, services, or financial instruments
-💳 EMI, interest, and installment utilities for financial products
-🏷️ Discounts: loyalty, tiered, early-bird, and multiple coupons
-🧾 Taxes, delivery, and service fee calculations
-🛡️ Price caps and floors to enforce business rules
-🧩 Easily integratable with any Rails app
+- ⚡ Automatic pricing calculations for products, services, or financial instruments
+- 💳 EMI, interest, and installment utilities for financial products
+- 🏷️ Discounts: loyalty, tiered, early-bird, and multiple coupons
+- 🧾 Taxes, delivery, and service fee calculations
+- 🛡️ Price caps and floors to enforce business rules
+- 🧩 Easily integratable with any Rails app
 
 ---
 
