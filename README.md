@@ -58,25 +58,51 @@ config = {
     gold:     { threshold: 1000, discount: 0.10 },
     platinum: { threshold: 2000, discount: 0.20 }
   },
-  tax_rate: 0.18,
-  coupons: {
-    "SAVE50" => 50,    # Fixed discount
-    "NEW10"  => 0.10   # Percentage discount
+  tax_rate: 0.18,                       # 18% tax
+  coupons: {                             # Coupons can stack
+    "SAVE50" => 50,                      # Fixed discount
+    "NEW10"  => 0.10                     # Percentage discount
   },
-  delivery_fee: 50.0
+  early_bird_deadline: Time.current + 1.hour, # Early bird active for 1 hour
+  early_bird_discount: 0.05,              # 5% early bird
+  delivery_fee: 20.0,                     # Delivery fee
+  min_price: 0.0,
+  max_price: 2000.0                       # Price cap
 }
 
-# Initialize calculator
+# --- Options (Coupons applied) ---
+options = {
+  coupons: ["SAVE50", "NEW10"] # Multiple coupons
+}
+
+# --- Initialize Calculator ---
 calc = MycoPricingEngine::Calculator.new(
   base_price: 1000,
   user: user,
-  options: { coupons: ["SAVE50"] }, # <-- note: array of coupon codes
+  options: options,
   config: config
 )
 
-# Calculate final price
-puts calc.final_price
-# => 1130.0
+# --- Calculate final price ---
+final_price = calc.final_price
+puts "Final Price: #{final_price}"
+
+# --- Step-by-step calculation ---
+# Base Price: 1000
+# Loyalty Discount (gold 10%): 100
+# Price after loyalty: 900
+# Early Bird Discount (5%): 45
+# Price after early bird: 855
+# Tax (18%): 153.9
+# Price after tax: 1008.9
+# Coupons:
+#   SAVE50 (fixed) = 50
+#   NEW10 (percentage) = 1008.9 * 0.10 = 100.89
+# Total coupon discount = 150.89
+# Price after coupons: 858.01
+# Delivery Fee: +20 = 878.01
+# Caps applied: min 0, max 2000 → no change
+# Final Price: 878.01 ✅
 ```
 
 ---
