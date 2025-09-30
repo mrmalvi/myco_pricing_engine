@@ -46,31 +46,37 @@ gem install myco_pricing_engine
 
 ### Manual Usage
 ```ruby
-user = User.new(loyalty_points: 1200) # Active Record/Openstruct
+require "ostruct"
+
+# Example user (ActiveRecord model or OpenStruct with `loyalty_points`)
+user = OpenStruct.new(loyalty_points: 1200)
 
 # Optional configuration
 config = {
-  loyalty_threshold: 1000,   # Points required for loyalty discount
-  loyalty_discount: 0.10,    # 10% discount
-  tax_rate: 0.18,            # 18% tax
-  coupons: {                 # Coupon codes
-    "SAVE50" => 50,          # Fixed discount
-    "NEW10"  => 0.10         # Percentage discount
-  }
+  loyalty_levels: {
+    silver:   { threshold: 500,  discount: 0.05 },
+    gold:     { threshold: 1000, discount: 0.10 },
+    platinum: { threshold: 2000, discount: 0.20 }
+  },
+  tax_rate: 0.18,
+  coupons: {
+    "SAVE50" => 50,    # Fixed discount
+    "NEW10"  => 0.10   # Percentage discount
+  },
+  delivery_fee: 50.0
 }
 
 # Initialize calculator
 calc = MycoPricingEngine::Calculator.new(
   base_price: 1000,
   user: user,
-  options: { coupon: "SAVE50" },
+  options: { coupons: ["SAVE50"] }, # <-- note: array of coupon codes
   config: config
 )
 
 # Calculate final price
 puts calc.final_price
-# => 1012.0
-
+# => 1130.0
 ```
 
 ---
