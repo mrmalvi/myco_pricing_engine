@@ -4,8 +4,7 @@
 [![Build Status](https://github.com/your-username/myco_pricing_engine/actions/workflows/ci.yml/badge.svg)](https://github.com/your-username/myco_pricing_engine/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-**Myco Pricing Engine** is an open-source **Rails engine** that provides utilities for pricing calculations and automation.
-It helps developers integrate pricing logic, split EMIs, and manage financial calculations in Rails applications.
+**Myco Pricing Engine is an open-source **Rails engine** designed for businesses, fintech companies, and organizations to handle pricing calculations and automation for products, services, or financial instruments. It provides reusable utilities to manage complex pricing rules, apply discounts, compute taxes, and handle promotions efficiently.
 
 👉 [RubyGems page](https://rubygems.org/gems/myco_pricing_engine) |
 👉 [Source code on GitHub](https://github.com/your-username/myco_pricing_engine)
@@ -13,9 +12,12 @@ It helps developers integrate pricing logic, split EMIs, and manage financial ca
 ---
 
 ## ✨ Features
-- ⚡ Automatic pricing calculations
-- 🔢 EMI and interest rate utilities
-- 🧩 Easily integratable with Rails apps
+⚡ Automatic pricing calculations for products, services, or financial instruments
+💳 EMI, interest, and installment utilities for financial products
+🏷️ Discounts: loyalty, tiered, early-bird, and multiple coupons
+🧾 Taxes, delivery, and service fee calculations
+🛡️ Price caps and floors to enforce business rules
+🧩 Easily integratable with any Rails app
 
 ---
 
